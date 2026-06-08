@@ -5,6 +5,6 @@
 </head>
 <body>
     <h1>Welcome to INIRAH</h1>
-    <p>Official Website of INIRAH</p>
+    <p>Website is working successfully.</p>
 </body>
 </html>
