@@ -1,22 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>INIRAH</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INIRAH Login</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            background:linear-gradient(135deg,#0f172a,#1e293b);
+        }
+
+        .login-container{
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            width:350px;
+            box-shadow:0 0 20px rgba(0,0,0,0.3);
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:20px;
+            color:#0f172a;
+        }
+
+        .input-group{
+            margin-bottom:15px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:5px;
+            font-weight:bold;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            border:1px solid #ccc;
+            border-radius:8px;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            border:none;
+            border-radius:8px;
+            background:#2563eb;
+            color:white;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#1d4ed8;
+        }
+
+        .footer{
+            text-align:center;
+            margin-top:15px;
+            font-size:14px;
+        }
+
+        .footer a{
+            text-decoration:none;
+            color:#2563eb;
+        }
+    </style>
 </head>
 <body>
-<h1>INIRAH</h1>
-<h2>Technology & Solutions</h2>
-<p>Welcome to the official INIRAH website.</p>
 
-<h3>Services</h3>
-<ul>
-<li>Network Administration</li>
-<li>Cyber Security</li>
-<li>Linux Solutions</li>
-<li>AI & Automation</li>
-</ul>
+<div class="login-container">
+    <h1>INIRAH</h1>
 
-<p>Contact: INIRAH.HRTEAM@GMAIL.COM</p>
+    <form onsubmit="login(event)">
+        <div class="input-group">
+            <label>Username</label>
+            <input type="text" id="username" placeholder="Enter Username" required>
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter Password" required>
+        </div>
+
+        <button type="submit">Login</button>
+
+        <div class="footer">
+            <p>Don't have an account? <a href="#">Register</a></p>
+        </div>
+    </form>
+</div>
+
+<script>
+function login(event){
+    event.preventDefault();
+
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    if(username === "admin" && password === "1234"){
+        alert("Login Successful!");
+        window.location.href = "dashboard.html";
+    } else {
+        alert("Invalid Username or Password");
+    }
+}
+</script>
+
 </body>
-</html>
 </html>
